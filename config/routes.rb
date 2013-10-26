@@ -1,7 +1,7 @@
 LeadingAge::Application.routes.draw do
   resources :users
-  root to: 'static#home'
-  get '/about', to: 'static#about', as: 'about'
+  root to: 'static_pages#home'
+  get '/about', to: 'static_pages#about', as: 'about'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
