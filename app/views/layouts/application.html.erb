@@ -29,9 +29,10 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="<%= root_path %>">Home</a></li>
-          <li><a href="<%= about_path %>">About</a></li>
-          <li><a href="<%= contact_path %>">Contact</a></li>
+          <li class="<%= 'active' if @page_tab == 'home' %>"><a href="<%= root_path %>">Home</a></li>
+          <li><a class="<%= 'active' if @page_tab == 'chat' %>" href="<%= rooms_path %>">Chat Rooms</a></li>
+          <li><a class="<%= 'active' if @page_tab == 'about' %>" href="<%= about_path %>">About</a></li>
+          <li><a class="<%= 'active' if @page_tab == 'contact' %>" href="<%= contact_path %>">Contact</a></li>
         </ul>
       </div>
     </div>

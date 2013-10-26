@@ -6,11 +6,12 @@ LeadingAge::Application.routes.draw do
   resources :rooms
   resources :users
 
-  # root to: 'static_pages#home'
-  root :to => 'rooms#index'
+  root to: 'static_pages#home'
+  # root :to => 'rooms#index'
 
   match '/party/:id', :to => 'rooms#party', :as => :party, :via => :get
 
+  get '/faq', to: 'static_pages#faq', as: 'faq'
   get '/about', to: 'static_pages#about', as: 'about'
   get '/contact', to: 'static_pages#contact', as: 'contact'
   # The priority is based upon order of creation: first created -> highest priority.

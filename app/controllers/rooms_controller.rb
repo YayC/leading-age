@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_filter :config_opentok,:except => [:index]
   def index
+    @page_tab = 'chat'
     @rooms = Room.where(:public => true).order('created_at DESC')
     @new_room = Room.new
   end
