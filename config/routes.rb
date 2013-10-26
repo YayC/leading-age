@@ -1,6 +1,7 @@
 LeadingAge::Application.routes.draw do
   resources :users
-
+  root to: 'static#home'
+  get '/about', to: 'static#about', as: 'about'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +42,7 @@ LeadingAge::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
