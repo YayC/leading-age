@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to users_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_user_path(@user), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show user</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @user.name %></dd>
+
+  <dt>Password digest:</dt>
+  <dd><%= @user.password_digest %></dd>
+
+  <dt>Auth token:</dt>
+  <dd><%= @user.auth_token %></dd>
+
+  <dt>Auth token expires at:</dt>
+  <dd><%= @user.auth_token_expires_at %></dd>
+
+  <dt>Password reset token:</dt>
+  <dd><%= @user.password_reset_token %></dd>
+
+  <dt>Password reset expires at:</dt>
+  <dd><%= @user.password_reset_expires_at %></dd>
+
+  <dt>Timezone:</dt>
+  <dd><%= @user.timezone %></dd>
+
+</dl>

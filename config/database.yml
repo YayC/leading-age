@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: leading-age_development
   pool: 5
-  username: leading-age
+  username: JConnolly
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,13 +48,13 @@ test:
   encoding: unicode
   database: leading-age_test
   pool: 5
-  username: leading-age
+  username: JConnolly
   password:
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: leading-age_production
-  pool: 5
-  username: leading-age
-  password:
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: leading-age_production
+#   pool: 5
+#   username: leading-age
+#   password:
