@@ -35,6 +35,17 @@ end
 gem 'opentok'
 gem 'bootstrap-generators'
 
+group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller' # for better errors
+
+  gem 'pry-rails'
+    gem 'bond'
+    gem 'pry-rescue'
+    gem 'pry-stack_explorer'
+    gem 'pry-remote'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,7 +1,18 @@
 LeadingAge::Application.routes.draw do
+  # get "rooms/index"
+  # get "rooms/create"
+  # get "rooms/party"
+  # get "rooms/config_opentok"
+  resources :rooms
   resources :users
-  root to: 'static_pages#home'
+
+  # root to: 'static_pages#home'
+  root :to => 'rooms#index'
+
+  match '/party/:id', :to => 'rooms#party', :as => :party, :via => :get
+
   get '/about', to: 'static_pages#about', as: 'about'
+  get '/contact', to: 'static_pages#contact', as: 'contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
