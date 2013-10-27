@@ -22,8 +22,10 @@
   session.connect(apiKey, token);
 
   var publisher;
+  var viewportWidth = $(window).width();
+  var playerWidth = 0.7 * viewportWidth;
   function sessionConnectedHandler(event) {
-    publisher = TB.initPublisher(apiKey, 'videobox');
+    publisher = TB.initPublisher(apiKey, 'videobox', {width: playerWidth, height: (playerWidth * 0.75)});
     session.publish(publisher);
 
   // Subscribe to streams that were in the session when we connected

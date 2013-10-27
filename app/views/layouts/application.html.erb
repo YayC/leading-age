@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>LeadingAge - LIFE Coach</title>
+  <title>Leading LIFE Coach</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -17,26 +17,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "LIFE coach", root_path, :class => "navbar-brand" %>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="<%= 'active' if @page_tab == 'home' %>"><a href="<%= root_path %>">Home</a></li>
-          <li><a class="<%= 'active' if @page_tab == 'chat' %>" href="<%= rooms_path %>">Chat Rooms</a></li>
-          <li><a class="<%= 'active' if @page_tab == 'about' %>" href="<%= about_path %>">About</a></li>
-          <li><a class="<%= 'active' if @page_tab == 'contact' %>" href="<%= contact_path %>">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+
+
+  <!-- Side Menu -->
+  <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="icon-reorder"></i></a>
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="icon-remove"></i></a>
+      <li class="sidebar-brand"><a href="http://startbootstrap.com">Leading LIFE Coach</a></li>
+      <li><a href="<%= root_path %>">Home</a></li>
+      <li><a href="#portfolio">Pricing</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="<%= about_path %>">About</a></li>
+      <li><a href="<%= contact_path %>">Contact</a></li>
+    </ul>
   </div>
+  <!-- /Side Menu -->
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable" do %>
@@ -48,10 +44,49 @@
     <%= yield %>
 
     <hr>
-
     <footer>
-      <p>&copy; Team LIFE at LeadingAge Hackfest, 2013</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <p>Copyright &copy; Team LIFE at LeadingAge Hackfest, 2013</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
+
+
+    <!-- Custom JavaScript for the Side Menu - Put in a custom JS file if you want to clean this up -->
+
+  <script>
+      $("#menu-close").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+  </script>
+  <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+  </script>
+  <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+              || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
 </body>
 </html>

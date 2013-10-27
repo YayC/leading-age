@@ -1,33 +1,126 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+
+    <!-- Full Page Image Header Area -->
+    <div id="top" class="header">
+      <div class="vert-text">
+        <h1>Leading LIFE Coach</h1>
+        <h3><em>We</em> help, <em>You</em> with social media!</h3>
+        <a href="<%= rooms_path %>" class="btn btn-default btn-lg">Live support now</a>
+      </div>
+    </div>
+    <!-- /Full Page Image Header Area -->
+
+    <!-- Intro -->
+    <div id="intro" class="intro">
       <div class="container">
-        <h1>Instant Help for Seniors!</h1>
-        <p>Get the help button today! (when this website is actually working :)</p>
-        <div class='container'>
-          <a class="btn btn-primary btn-lg" href='<%= faq_path %>'>Self-Serve Help <span class="glyphicon glyphicon-search"></span></a> &nbsp;&nbsp;&nbsp;
-          <a class="btn btn-success btn-lg" href='<%= rooms_path %>'>Chat Now &raquo;</a>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <h2>No need to feel bad bothering your grandchildren for help anymore!</h2>
+            <p class="lead">We'll help you get setup on the latest and greatest social media networks and even teach you how to use these tools.</p>
+          </div>
         </div>
       </div>
     </div>
-<!--
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+    <!-- /Intro -->
+
+    <!-- Services -->
+    <div id="services" class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <h2>Benefits</h2>
+            <hr>
+          </div>
         </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-3 text-center">
+            <div class="service-item">
+              <i class="service-icon fa fa-home"></i>
+              <h4>Engage with family</h4>
+              <p>Boy, little Jimmy is growing up fast! See pictures and updates of your family as soon as they are updated to the web.</p>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="service-item">
+              <i class="service-icon fa fa-search-plus"></i>
+              <h4>Connect with friends</h4>
+              <p>How's good ol' Sally doing nowadays? Now it's easy to contact and get in touch with old friends.</p>
+            </div>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="service-item">
+              <i class="service-icon fa fa-group"></i>
+              <h4>Interact with communities</h4>
+              <p>Join your favorite group of hobbyists and discuss new and current updates in the fields you want.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- /Services -->
 
- -->
+    <!-- Callout -->
+    <div class="callout">
+      <div class="vert-text">
+        <h1>Got a quick question?</h1><p>
+        <h2>Help yourself! Find answers to the most frequently asked questions. Here, you can find step-by-step guides to the most common problems with social media.</h2>
+        <a href="<%= faq_path %>" class="btn btn-lg btn-primary">Self Service</a>
+      </div>
+    </div>
+    <!-- /Callout -->
+
+    <!-- Portfolio -->
+    <div id ="portfolio" class="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <h2>Stay Protected</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2 text-center">
+            <div class="portfolio-item">
+              <a href="#top"><%= image_tag('portfolio-1.jpg', class: 'img-portfolio img-responsive') %></a>
+              <h4>Windows Defender</h4>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="portfolio-item">
+              <a href="#top"><%= image_tag('portfolio-2.jpg', class: 'img-portfolio img-responsive') %></a>
+              <h4>Malwarebytes Anti-Malware</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2 text-center">
+            <div class="portfolio-item">
+              <a href="#top"><%= image_tag('portfolio-3.jpg', class: 'img-portfolio img-responsive') %></a>
+              <h4>AVG</h4>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="portfolio-item">
+              <a href="#top"><%= image_tag('portfolio-4.jpg', class: 'img-portfolio img-responsive') %></a>
+              <h4>Various Anti-Virus</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Portfolio -->
+
+    <!-- Call to Action -->
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <h3>Let's get started.</h3>
+            <a href="<%= rooms_path %>" class="btn btn-lg btn-default">Live Support</a>
+            <a href="<%= faq_path %>" class="btn btn-lg btn-primary">Self Service!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Call to Action -->
