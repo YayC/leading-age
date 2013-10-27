@@ -14,7 +14,7 @@
 
   <%= stylesheet_link_tag    "application", media: "all"%>
   <%= javascript_include_tag "application"%>
-  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -25,10 +25,10 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="icon-remove"></i></a>
-      <li class="sidebar-brand"><a href="http://startbootstrap.com">Leading LIFE Coach</a></li>
+      <li class="sidebar-brand"><a href="<%= root_path %>">Leading LIFE Coach</a></li>
       <li><a href="<%= root_path %>">Home</a></li>
       <!-- <li><a href="#portfolio">Pricing</a></li> -->
-      <li><a href="<%= about_path %>">About</a></li>
+      <li><a href="<%= faq_path %>">Self Service Help</a></li>
       <li><a href="<%= request_path %>">Live Support</a></li>
       <li><a href="#services">Other Services</a></li>
       <!-- <li><a href="<%= contact_path %>">Contact</a></li> -->
