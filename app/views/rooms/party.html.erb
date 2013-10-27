@@ -2,10 +2,9 @@
   <h1>Help session with <%= @room.name %></h1>
 </div>
 
-
 <div id='videobox'>
-
 </div>
+<div id='other_person'></div>
 <script src='http://static.opentok.com/v0.91/js/TB.min.js' type='text/javascript'></script>
 <script type='text/javascript'>
   var apiKey = 21098722;
@@ -25,11 +24,12 @@
   var viewportWidth = $(window).width();
   var playerWidth = 0.7 * viewportWidth;
   function sessionConnectedHandler(event) {
-    publisher = TB.initPublisher(apiKey, 'videobox', {width: playerWidth, height: (playerWidth * 0.75)});
+    publisher = TB.initPublisher(apiKey, 'videobox');
     session.publish(publisher);
 
   // Subscribe to streams that were in the session when we connected
-  subscribeToStreams(event.streams);
+    subscribeToStreams(event.streams);
+    $('#publisher_1').css('position', 'absolute')
   }
 
   function streamCreatedHandler(event) {
@@ -45,12 +45,12 @@
   }
 
   // Create the div to put the subscriber element in to
-  var div = document.createElement('div');
-  div.setAttribute('id', 'stream' + streams[i].streamId);
-  document.body.appendChild(div);
+  // var div = document.createElement('div');
+  // div.setAttribute('id', 'stream' + streams[i].streamId);
+  // document.body.appendChild(div);
 
   // Subscribe to the stream
-  session.subscribe(streams[i], div.id);
+  session.subscribe(streams[i], 'other_person', { width: playerWidth, height: (playerWidth * 0.75) });
   }
   }
 </script>
