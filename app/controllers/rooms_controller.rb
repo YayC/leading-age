@@ -22,10 +22,20 @@ class RoomsController < ApplicationController
     end
   end
 
+  def help_request
+    if @room = Room.assign
+      @tok_token = @opentok.generate_token :session_id => @room.sessionId
+      render :party and return
+    else
+      flash[:error] = 'Sorry, no one available!'
+      redirect_to root_path
+    end
+  end
+
   def party
     @room = Room.find(params[:id])
 
-    @tok_token = @opentok.generate_token :session_id =>@room.sessionId
+    @tok_token = @opentok.generate_token :session_id => @room.sessionId
   end
 
   private

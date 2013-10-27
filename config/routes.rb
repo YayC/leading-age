@@ -6,6 +6,8 @@ LeadingAge::Application.routes.draw do
   resources :rooms
   resources :users
 
+  get '/request', to: 'rooms#help_request', as: 'request'
+
   root to: 'static_pages#home'
   # root :to => 'rooms#index'
 

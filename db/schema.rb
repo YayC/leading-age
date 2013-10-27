@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20131026202614) do
     t.string   "name"
     t.string   "sessionId"
     t.boolean  "public"
+    t.boolean  "assigned"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
