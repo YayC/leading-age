@@ -3,8 +3,8 @@ class CreateRooms < ActiveRecord::Migration
     create_table :rooms do |t|
       t.string :name
       t.string :sessionId
-      t.boolean :public
-      t.boolean :assigned
+      t.boolean :public, default: true
+      t.boolean :assigned, default: false
       t.integer :user_id
 
       t.timestamps

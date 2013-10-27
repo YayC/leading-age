@@ -1,0 +1,31 @@
+@mixin border-radius($topleft, $topright: $topleft, $bottomright: $topleft, $bottomleft: $topleft) {
+    -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+    -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+    border-radius: $topleft $topright $bottomright $bottomleft;
+}
+
+@mixin box_shadow($shadows...) {
+  -webkit-box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin form_boxshadow {
+  @include box_shadow(1px 0px 0px 0px rgb(210, 210, 210), -1px 0px 0px 0px rgb(210, 210, 210), 0px 1px 0px 0px rgb(182, 182, 182), 0px 2px 0px 0px rgb(210, 210, 210), 2px 0px 0px 0px rgb(230, 230, 230), -2px 0px 0px 0px rgb(230, 230, 230), 0px 3px 0px 0px rgb(230, 230, 230), 0px -1px 0px 0px rgb(230, 230, 230));
+
+  @include border_radius(4px);
+
+  color: rgb(51, 51, 51);
+  border-color: rgb(51, 51, 51);
+}
+
+.form_style {
+  @include form_boxshadow;
+  padding:25px;
+  width: 100%;
+  max-width:460px;
+}
+
+.with_margin {
+  margin: 25px;
+}

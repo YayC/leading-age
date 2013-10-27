@@ -6,6 +6,10 @@ class RoomsController < ApplicationController
     @new_room = Room.new
   end
 
+  def new
+    @room = Room.new
+  end
+
   def create
     opentok_session = @opentok.create_session request.remote_addr
     args = room_params
@@ -35,7 +39,7 @@ class RoomsController < ApplicationController
   def party
     @room = Room.find(params[:id])
 
-    @tok_token = @opentok.generate_token :session_id => @room.sessionId
+    @tok_token = @opentok.generate_token session_id: @room.sessionId
   end
 
   private

@@ -3,6 +3,14 @@ class Room < ActiveRecord::Base
 
   def self.assign
     # find_by returns first matching record or nil
-    return Room.find_by assigned: false
+    room = Room.find_by assigned: false
+
+    if room
+      room.update(assigned: true)
+      return room
+    else
+      return false
+    end
   end
+
 end
